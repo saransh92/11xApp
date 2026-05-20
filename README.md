@@ -48,7 +48,7 @@ Custom domain is optional — add it in **Settings → Pages → Custom domain**
 
 ## The live agent
 
-The widget is already plugged in (`agent_1201ks13n7khf5ws6gnrjkc5667n`) and mounts as a floating bubble in the bottom-right of the page. Mic permission requires HTTPS, so the live conversation only works on the deployed Pages URL. See [`web/README.md`](web/README.md) for how to swap the agent ID or switch to an embedded (non-floating) variant.
+The widget is already plugged in and mounts as a floating bubble in the bottom-right of the page. Mic permission requires HTTPS, so the live conversation only works on the deployed Pages URL. See [`web/README.md`](web/README.md) for how to swap the agent ID or switch to an embedded (non-floating) variant.
 
 ## What's left for me to do
 
@@ -56,9 +56,6 @@ The widget is already plugged in (`agent_1201ks13n7khf5ws6gnrjkc5667n`) and moun
 - [ ] Drop the actual CV PDF (or hosted link) into the footer's "CV · coming soon" link
 - [ ] Verify Klarna / Revolut / Better.com source URLs (currently noted as HTML comments) point at the right ElevenLabs customer pages
 
-## What this is positioning against
-
-The essay deliberately avoids any "platform vs vendor" framing. ElevenLabs moved aggressively to a platform narrative in late 2025 / early 2026, and the goal of this piece is to extend that narrative into the workflow-platform stack — not relitigate the original positioning. The argument: ElevenAgents has the integration plumbing already; what's missing is the GTM motion that lets a ServiceNow platform owner pull voice into their roadmap.
 
 ## Authoring notes
 
