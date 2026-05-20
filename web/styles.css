@@ -1,0 +1,694 @@
+/* ===========================================================
+   ElevenAgents for ServiceNow — work-sample landing page
+   Design: refined minimalism. Black on white. One accent
+   color (ElevenLabs blue), used once on the CTA hover state.
+   =========================================================== */
+
+:root {
+  --ink: #0a0a0a;
+  --paper: #ffffff;
+  --rule: rgba(10, 10, 10, 0.12);
+  --rule-strong: rgba(10, 10, 10, 0.28);
+  --muted: rgba(10, 10, 10, 0.62);
+  --accent: #3b82f6;
+  --container: 1160px;
+  --gutter: 24px;
+  --section: 88px;
+}
+
+@media (min-width: 720px) {
+  :root {
+    --gutter: 40px;
+    --section: 120px;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --gutter: 56px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 720px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+/* === Layout primitives =================================== */
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.section {
+  padding-top: var(--section);
+  padding-bottom: var(--section);
+}
+
+/* === Typography ========================================== */
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@media (min-width: 720px) {
+  .eyebrow {
+    font-size: 13px;
+  }
+}
+
+.h-display {
+  font-size: clamp(40px, 6.4vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 22ch;
+}
+
+.h-section {
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  font-weight: 600;
+}
+
+.lead {
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.45;
+  font-weight: 400;
+  max-width: 56ch;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* === Top bar ============================================= */
+
+.topbar {
+  border-bottom: 1px solid var(--rule);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 64px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.topbar-left {
+  color: var(--ink);
+}
+
+.topbar-right {
+  color: var(--muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 540px) {
+  .topbar-loc {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar-inner {
+    font-size: 12px;
+    gap: 12px;
+  }
+}
+
+/* === Hero ================================================ */
+
+.hero {
+  padding-top: calc(var(--section) - 16px);
+  padding-bottom: 64px;
+}
+
+.hero .eyebrow {
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin-bottom: 28px;
+}
+
+.hero .lead {
+  max-width: 58ch;
+  color: var(--ink);
+}
+
+.cta-wrap {
+  margin-top: 40px;
+}
+
+/* === CTA ================================================= */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 26px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.005em;
+  border: 1px solid var(--ink);
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.cta-glyph {
+  font-size: 11px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+/* === Section heading block =============================== */
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 56px;
+  max-width: 64ch;
+}
+
+@media (min-width: 720px) {
+  .section-head {
+    margin-bottom: 72px;
+  }
+}
+
+/* === The wedge =========================================== */
+
+.wedge p {
+  font-size: clamp(19px, 1.6vw, 24px);
+  line-height: 1.5;
+  max-width: 60ch;
+  letter-spacing: -0.005em;
+}
+
+.wedge p + p {
+  margin-top: 28px;
+}
+
+/* === Three-column platform stack ========================= */
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  border-top: 1px solid var(--rule);
+  padding-top: 56px;
+}
+
+@media (min-width: 720px) {
+  .stack {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+    padding-top: 64px;
+  }
+}
+
+@media (min-width: 720px) {
+  .stack--four {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 56px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .stack--four {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+}
+
+.stack-item .pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.stack-item h3 {
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.stack-item p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* === Outcome proof bar =================================== */
+
+.proof {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  border-top: 1px solid var(--rule);
+  padding-top: 56px;
+}
+
+@media (min-width: 720px) {
+  .proof {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+    padding-top: 64px;
+  }
+}
+
+.proof-stat {
+  font-size: clamp(56px, 6vw, 88px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.proof-label {
+  margin-top: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.proof-context {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 32ch;
+}
+
+/* === Proof aside (the second leg) ======================== */
+
+.proof-aside {
+  margin-top: 88px;
+  padding-top: 56px;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 880px) {
+  .proof-aside {
+    grid-template-columns: 280px 1fr;
+    gap: 56px;
+  }
+}
+
+.proof-aside-head .eyebrow {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.proof-aside-title {
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  max-width: 22ch;
+  color: var(--ink);
+}
+
+.proof-aside-body p {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 62ch;
+}
+
+.proof-aside-body p + p {
+  margin-top: 20px;
+}
+
+/* === Live demo =========================================== */
+
+.demo .section-head {
+  margin-bottom: 40px;
+}
+
+.demo-callout {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 32px 0;
+}
+
+@media (min-width: 720px) {
+  .demo-callout {
+    padding: 40px 0;
+    gap: 28px;
+  }
+}
+
+.demo-callout-arrow {
+  font-size: 32px;
+  line-height: 1;
+  color: var(--ink);
+  font-weight: 300;
+  transform: translateY(-2px);
+}
+
+.demo-callout-title {
+  font-size: clamp(18px, 1.4vw, 22px);
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  max-width: 32ch;
+}
+
+.demo-callout-sub {
+  margin-top: 10px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+.demo-callout-sub code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  background: rgba(10, 10, 10, 0.06);
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: var(--ink);
+}
+
+.demo-prompts {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 14px;
+  font-size: 14px;
+  color: var(--muted);
+  align-items: baseline;
+}
+
+.demo-prompts .prompts-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--ink);
+  margin-right: 4px;
+}
+
+.demo-prompts span.prompt::before {
+  content: "·";
+  margin-right: 14px;
+  color: var(--rule-strong);
+}
+
+.demo-prompts span.prompt:first-of-type::before {
+  display: none;
+}
+
+/* === Compliance ========================================== */
+
+.compliance {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.compliance-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: baseline;
+}
+
+@media (min-width: 880px) {
+  .compliance-row {
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+  }
+}
+
+.compliance-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.compliance-inline {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+  max-width: 80ch;
+}
+
+/* === Bio ================================================= */
+
+.bio .section-head {
+  margin-bottom: 40px;
+}
+
+.bio p {
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.6;
+  max-width: 64ch;
+}
+
+.bio p + p {
+  margin-top: 20px;
+}
+
+.bio-close {
+  margin-top: 32px !important;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: clamp(18px, 1.5vw, 22px) !important;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+
+/* === Footer ============================================== */
+
+.footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 36px;
+  padding-bottom: 56px;
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: border-color 140ms ease;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  border-bottom-color: var(--ink);
+  outline: none;
+}
+
+.footer a[aria-disabled="true"] {
+  color: var(--muted);
+  pointer-events: none;
+  border-bottom-style: dashed;
+}
+
+/* === Essay (writing.html) ================================ */
+
+.essay-page {
+  background: var(--paper);
+}
+
+.essay {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 64px var(--gutter) 96px;
+}
+
+@media (min-width: 720px) {
+  .essay {
+    padding: 96px var(--gutter) 128px;
+  }
+}
+
+.essay-back {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 4px;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.essay-back:hover,
+.essay-back:focus-visible {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+  outline: none;
+}
+
+.essay h1 {
+  font-size: clamp(36px, 4.4vw, 56px);
+  letter-spacing: -0.028em;
+  line-height: 1.05;
+  font-weight: 600;
+  margin-bottom: 16px;
+  max-width: 18ch;
+}
+
+.essay .dek {
+  font-size: clamp(18px, 1.5vw, 22px);
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.45;
+  margin-bottom: 56px;
+  max-width: 38ch;
+}
+
+.essay h2 {
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.015em;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.essay p {
+  font-size: 17.5px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+@media (min-width: 720px) {
+  .essay p {
+    font-size: 18.5px;
+  }
+}
+
+.essay p strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.essay hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 56px 0 32px;
+}
+
+.essay-footer {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.essay-footer a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.essay-footer a:hover {
+  border-bottom-color: var(--ink);
+}
