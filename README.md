@@ -1,11 +1,10 @@
-# ElevenAgents for ServiceNow
+# ElevenAgents for enterprise
 
-A two-part work sample for a PMM application to ElevenLabs (ElevenAgents Enterprise):
+A two-part work sample for a PMM application to ElevenLabs (ElevenAgents):
 
-1. **A positioning essay** arguing that the next leg of voice-agent adoption is inside the enterprise platforms ElevenAgents already integrates with (Salesforce, ServiceNow, Zendesk, HubSpot) — with ServiceNow as the worked example.
+1. **A positioning essay** arguing that the next leg of voice-agent adoption is inside the enterprise platforms ElevenAgents already integrates with (Salesforce, ServiceNow, Zendesk, HubSpot).
 2. **A live landing page** that adapts the essay into web copy and embeds a working ElevenAgents voice widget so the visitor can talk to it.
 
-The essay carries the argument. The page proves the argument can ship. The embedded agent proves the product can sell itself.
 
 **Live page:** [saransh92.github.io/11xApp](https://saransh92.github.io/11xApp/) (deploys from `main` via GitHub Pages)
 
